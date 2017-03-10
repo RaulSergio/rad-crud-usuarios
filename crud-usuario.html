@@ -1,7 +1,28 @@
 <html>
     <head>
         <script>
-        
+        //Instancia de uma classe anonima
+            var app = new function(){
+                console.log("Instanciando App");
+                this.el = document.getElementById('usuarios');
+                this.usuarios = ['Jão','Zé','Maria'];
+
+                this.contar = function(qtd){
+                    var el = document.getElementById('contador');
+                    var nome = 'Usuário';
+
+                    if(qtd){
+                        if(qtd>1){
+                            nome = 'Usuários';
+                        }
+                        el.innerHTML = qtd + ' ' + nome;
+                    }else{
+                        el.innerHTML = 'Sem' + ' ' + nome;
+                    }
+
+                }
+            };
+
         </script>
     </head>
         <body>
