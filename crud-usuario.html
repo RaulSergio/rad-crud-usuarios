@@ -19,8 +19,22 @@
                     }else{
                         el.innerHTML = 'Sem' + ' ' + nome;
                     }
-
                 }
+            };
+
+            this.listarTodos = function(){
+                var qtd = ' ';
+
+                if(this.usuarios.lenght>0){
+                    for(i = 0; i < this.usuarios.length; i++){
+                        qtd += '<tr>';
+                        qtd += '<td>' + this.usuarios[i] + '</td>';
+                        qtd += '</tr>';
+                    }
+                }
+
+                this.contar = (this.usuarios.lenght);
+                return this.el.innerHTML = qtd;
             };
 
         </script>
