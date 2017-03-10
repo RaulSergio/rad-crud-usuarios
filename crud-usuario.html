@@ -44,11 +44,12 @@
                 var dados = ' ';
 
                 if(this.usuarios.length>0){
-                    for(i = 0; i < this.usuarios.length; i++){
-                        dados += '<tr>';
-                        dados += '<td>' + this.usuarios[i] + '</td>';
-                        dados += '</tr>';
-                    }
+                     for (i=0;i<this.usuarios.length;i++){
+                        dados+='<tr>';
+                        dados+='<td>'+this.usuarios[i]+'</td>';
+                        dados+='<td><button onclick="app.excluir('+i+')">excluir</button></td>';
+                        dados+="</tr>";
+                          }
                 }
 
                 //Atualiza contador
@@ -57,26 +58,15 @@
                 //Atualizar DOM
                 this.elUsuarios.innerHTML = dados;
                 };
+
+                this.excluir= function(item){
+                //remove1 1 elemento
+                    this.usuarios.splice(item, 1);
+                    this.listarTodos();
+                  }
             };
 
             app.listarTodos();
-
-            /*this.listarTodos = function(){
- +                        //gera String em formato tabela
- +                        var dados = '';
- +                        for (i=0;i<this.usuarios.length;i++){
- +                            dados +="<tr><td>"+this.usuarios[i]+"</td></tr>";
- +                        }
- +
- +                        //atualiza contador
- +                        this.contar(this.usuarios.length);
- +
- +                        //atualizar DOM
- +                        this.elUsuarios.innerHTML= dados;
- +                    };
- +
- +
- +                };*/
 
         </script>
 </html>
